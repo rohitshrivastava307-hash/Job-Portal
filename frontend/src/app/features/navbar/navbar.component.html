@@ -1,0 +1,87 @@
+<nav class="bg-white border-b border-gray-200 px-8 py-4">
+
+  <div class="max-w-7xl mx-auto flex items-center justify-between">
+
+    <!-- LOGO -->
+
+    <h1
+      routerLink="/"
+      class="text-2xl font-bold text-emerald-600 cursor-pointer"
+    >
+
+      JobPortal
+
+    </h1>
+
+    <!-- NAV LINKS -->
+
+    <div class="flex items-center gap-6">
+
+      <!-- JOB SEEKER -->
+
+      <ng-container
+        *ngIf="user?.role === 'job_seeker'"
+      >
+
+        <a
+          routerLink="/jobs"
+          class="text-gray-700 hover:text-emerald-600 transition"
+        >
+
+          Jobs
+
+        </a>
+
+        <a
+          routerLink="/my-applications"
+          class="text-gray-700 hover:text-emerald-600 transition"
+        >
+
+          My Applications
+
+        </a>
+
+      </ng-container>
+
+      <!-- RECRUITER -->
+
+      <ng-container
+        *ngIf="user?.role === 'recruiter'"
+      >
+
+        <a
+          routerLink="/create-job"
+          class="text-gray-700 hover:text-emerald-600 transition"
+        >
+
+          Create Job
+
+        </a>
+
+        <a
+          routerLink="/my-jobs"
+          class="text-gray-700 hover:text-emerald-600 transition"
+        >
+
+          My Jobs
+
+        </a>
+
+      </ng-container>
+
+      <!-- LOGOUT -->
+
+      <button
+        (click)="logout()"
+        class="bg-emerald-600 text-white px-5 py-2 rounded-lg hover:bg-emerald-700 transition"
+      >
+
+        Logout
+
+      </button>
+
+    </div>
+
+  </div>
+
+</nav>

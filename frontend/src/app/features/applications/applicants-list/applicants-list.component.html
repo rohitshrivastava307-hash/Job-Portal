@@ -1,0 +1,101 @@
+<div class="min-h-screen bg-gray-50 py-10 px-6">
+
+  <div class="max-w-5xl mx-auto">
+
+    <!-- HEADER -->
+
+    <div class="mb-10">
+
+      <h1 class="text-4xl font-bold text-gray-900 mb-2">
+
+        Applicants
+
+      </h1>
+
+      <p class="text-gray-500">
+
+        Manage candidates who applied for this job
+
+      </p>
+
+    </div>
+
+    <!-- APPLICANTS -->
+
+    <div class="space-y-5">
+
+      <div
+        *ngFor="let applicant of applicants"
+        class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm"
+      >
+
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+
+          <!-- LEFT -->
+
+          <div>
+
+            <h2 class="text-2xl font-semibold text-gray-900 mb-2">
+
+              {{applicant.applicant.name}}
+
+            </h2>
+
+            <p class="text-gray-600 mb-3">
+
+              {{applicant.applicant.email}}
+
+            </p>
+
+            <div class="inline-block bg-gray-100 text-gray-700 text-sm px-4 py-2 rounded-lg">
+
+              Status:
+              <span class="font-medium">
+
+                {{applicant.status}}
+
+              </span>
+
+            </div>
+
+          </div>
+
+          <!-- RIGHT -->
+
+          <div class="flex gap-3 flex-wrap">
+
+            <button
+              (click)="updateStatus(
+                applicant._id,
+                'accepted'
+              )"
+              class="bg-emerald-600 text-white px-5 py-2 rounded-lg hover:bg-emerald-700 transition"
+            >
+
+              Accept
+
+            </button>
+
+            <button
+              (click)="updateStatus(
+                applicant._id,
+                'rejected'
+              )"
+              class="bg-red-500 text-white px-5 py-2 rounded-lg hover:bg-red-600 transition"
+            >
+
+              Reject
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

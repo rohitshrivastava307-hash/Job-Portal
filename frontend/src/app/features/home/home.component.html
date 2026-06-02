@@ -1,0 +1,128 @@
+<div class="min-h-screen bg-gray-50 py-10 px-6">
+
+  <div class="max-w-6xl mx-auto">
+
+    <!-- HEADER -->
+
+    <div class="mb-10">
+
+      <h1 class="text-4xl font-bold text-gray-900 mb-2">
+
+        Welcome Back,
+        {{user.name}}
+
+      </h1>
+
+      <p class="text-gray-500">
+
+        Manage your hiring journey efficiently
+
+      </p>
+
+    </div>
+
+    <!-- INFO CARDS -->
+
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <!-- ROLE -->
+
+      <div class="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
+
+        <p class="text-sm text-gray-500 mb-3">
+
+          Your Role
+
+        </p>
+
+        <h2 class="text-2xl font-semibold text-gray-900">
+
+          {{user.role}}
+
+        </h2>
+
+      </div>
+
+      <!-- RECRUITER CARD -->
+
+      <div
+        *ngIf="user.role === 'recruiter'"
+        class="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm"
+      >
+
+        <p class="text-sm text-gray-500 mb-3">
+
+          Recruiter Access
+
+        </p>
+
+        <h2 class="text-2xl font-semibold text-gray-900 mb-2">
+
+          Manage Hiring
+
+        </h2>
+
+        <p class="text-gray-600">
+
+          Create jobs and review applicants from navbar sections.
+
+        </p>
+
+      </div>
+
+      <!-- JOB SEEKER CARD -->
+
+      <div
+        *ngIf="user.role === 'job_seeker'"
+        class="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm"
+      >
+
+        <p class="text-sm text-gray-500 mb-3">
+
+          Job Seeker Access
+
+        </p>
+
+        <h2 class="text-2xl font-semibold text-gray-900 mb-2">
+
+          Explore Opportunities
+
+        </h2>
+
+        <p class="text-gray-600">
+
+          Browse jobs and track applications from navbar sections.
+
+        </p>
+
+      </div>
+
+      <!-- PLATFORM -->
+
+      <div class="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
+
+        <p class="text-sm text-gray-500 mb-3">
+
+          Platform
+
+        </p>
+
+        <h2 class="text-2xl font-semibold text-gray-900 mb-2">
+
+          JobPortal
+
+        </h2>
+
+        <p class="text-gray-600">
+
+          Modern hiring platform for recruiters and job seekers.
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
